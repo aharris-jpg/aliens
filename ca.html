@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Alien Abduction Odds Index 2025 — Top 10 Canada Provinces</title>
+  <title>Alien Abduction Odds Index 2025 — Top 10 Canadian Provinces</title>
 
   <style>
     html, body { height:100%; }
-    body { margin:0; background:#061225; overflow:hidden; }
+    body { margin:0; background:#eef6ff; overflow:hidden; } /* slightly different from USA */
   </style>
 </head>
 
@@ -20,30 +20,42 @@
     font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   }
 
+  /* ===== LIGHT / “FIELD REPORT” (CANADA VARIANT) ===== */
   .csb-alien{
-    /* alien palette */
-    --g1:#070b1f;
-    --g2:#0a1230;
-    --g3:#0b2a2e;
-    --g4:#10a6a2;
-    --g5:#60d000;
+    --paper:#ffffff;
+    --bg:#eef6ff;
+    --ink:#0b1220;
+    --muted:#445066;
+    --muted2:#667085;
 
-    --kickerGreen:#60d000;
-    --ink:#0B1220;
-    --border:#d7e2f3;
-    --shadow: 0 16px 42px rgba(0,0,0,.30);
-    --shadow2: 0 10px 26px rgba(0,0,0,.22);
+    --border:#d8e6f1;
+    --shadow: 0 18px 52px rgba(15, 23, 42, .10);
+    --shadow2: 0 10px 26px rgba(15, 23, 42, .08);
+
+    --navy:#0f2747;
+    --navy2:#163a66;
+
+    /* differentiate from USA: lean a touch more teal + “arctic” blue */
+    --teal:#1b7a86;
+    --arctic:#2e7dd7;
+    --emerald:#1a9b67;
+    --acid:#63d000;
+
+    --tealSoft: rgba(27,122,134,.10);
+    --arcticSoft: rgba(46,125,215,.10);
+    --emeraldSoft: rgba(26,155,103,.10);
+    --limeSoft: rgba(99,208,0,.10);
 
     --gap: 10px;
     --inner-pad: 12px;
 
-    --t-title: clamp(15px, 1.8vw, 21px);
-    --t-city:  clamp(12px, 1.25vw, 14px);
+    --t-title: clamp(16px, 1.95vw, 22px);
+    --t-city:  clamp(13px, 1.35vw, 15px);
 
-    --t-hero:  clamp(22px, 3.1vw, 36px);
-    --t-hero-kicker: clamp(11px, 1.2vw, 13px);
-    --t-card-title: clamp(12px, 1.35vw, 15px);
-    --t-card-value: clamp(13px, 1.55vw, 17px);
+    --t-hero:  clamp(26px, 3.3vw, 40px);
+    --t-hero-kicker: clamp(12px, 1.25vw, 14px);
+    --t-card-title: clamp(13px, 1.45vw, 16px);
+    --t-card-value: clamp(14px, 1.65vw, 18px);
   }
 
   section.csb-alien{
@@ -52,12 +64,16 @@
     max-width: 980px;
     margin: 0 auto;
     overflow:hidden;
-    border: 1px solid rgba(255,255,255,.12);
+    border: 1px solid var(--border);
     box-shadow: var(--shadow);
+    border-radius: 22px;
+
     background:
-      radial-gradient(900px 520px at 70% 10%, rgba(16,166,162,.18) 0%, transparent 58%),
-      radial-gradient(900px 520px at 10% 30%, rgba(96,208,0,.12) 0%, transparent 62%),
-      linear-gradient(180deg, #050814 0%, #071a33 60%, #050814 100%);
+      radial-gradient(900px 520px at 85% 0%, rgba(46,125,215,.12) 0%, transparent 58%),
+      radial-gradient(900px 520px at 18% 28%, rgba(26,155,103,.10) 0%, transparent 62%),
+      radial-gradient(900px 520px at 55% 110%, rgba(99,208,0,.08) 0%, transparent 65%),
+      linear-gradient(180deg, rgba(255,255,255,.96) 0%, rgba(238,246,255,.90) 100%),
+      var(--paper);
     display:flex;
     flex-direction:column;
   }
@@ -65,12 +81,17 @@
   /* ===== HEADER ===== */
   .head{
     padding: 12px 14px 10px;
-    color:#fff;
-    border-top: 1px solid rgba(255,255,255,.12);
-    border-bottom: 1px solid rgba(255,255,255,.14);
+    color: var(--ink);
+    border-bottom: 1px solid var(--border);
     background:
-      radial-gradient(120% 180% at 85% 0%, rgba(255,255,255,.16) 0%, transparent 62%),
-      linear-gradient(92deg, var(--g1) 0%, var(--g2) 35%, var(--g3) 62%, var(--g4) 82%, var(--g5) 100%);
+      radial-gradient(140% 220% at 90% 0%, rgba(46,125,215,.16) 0%, transparent 62%),
+      radial-gradient(160% 240% at 20% 0%, rgba(26,155,103,.12) 0%, transparent 60%),
+      linear-gradient(90deg,
+        rgba(15,39,71,.08) 0%,
+        rgba(27,122,134,.10) 45%,
+        rgba(46,125,215,.10) 75%,
+        rgba(99,208,0,.08) 100%),
+      #fff;
     flex: 0 0 auto;
   }
   .head-top{ display:flex; align-items:center; justify-content:space-between; gap:12px; }
@@ -88,23 +109,35 @@
     align-items:center;
     gap:10px;
     min-width:0;
+    color: var(--navy);
   }
+
+  /* left icon chip */
   .title-ufo{
-    width: 22px;
-    height: 22px;
+    width: 26px;
+    height: 26px;
     flex: 0 0 auto;
-    display:inline-block;
+    display:grid;
+    place-items:center;
+    border-radius: 10px;
+    background:
+      radial-gradient(120% 140% at 30% 20%, rgba(99,208,0,.24) 0%, transparent 65%),
+      radial-gradient(120% 140% at 80% 0%, rgba(46,125,215,.18) 0%, transparent 62%),
+      linear-gradient(180deg, rgba(255,255,255,.95), rgba(238,246,255,.95));
+    border: 1px solid rgba(27,122,134,.22);
+    box-shadow: 0 10px 18px rgba(15, 23, 42, .08);
   }
   .title-ufo svg{
-    width:100%;
-    height:100%;
+    width:18px;
+    height:18px;
     display:block;
     fill:none;
-    stroke: var(--kickerGreen);
+    stroke: var(--emerald);
     stroke-width: 2.2;
     stroke-linecap: round;
     stroke-linejoin: round;
   }
+
   #sb-title{
     white-space:nowrap;
     overflow:hidden;
@@ -113,15 +146,20 @@
     min-width:0;
   }
 
+  /* bigger logo */
   .brand{
     display:flex;align-items:center;gap:10px;
-    padding: 8px 10px;
-    border-radius: 14px;
-    border: 1px solid rgba(255,255,255,.20);
-    background: rgba(255,255,255,.10);
+    padding: 10px 12px;
+    border-radius: 16px;
+    border: 1px solid rgba(15,39,71,.16);
+    background:
+      radial-gradient(140% 160% at 85% 10%, rgba(99,208,0,.12) 0%, transparent 60%),
+      radial-gradient(140% 160% at 10% 0%, rgba(46,125,215,.12) 0%, transparent 62%),
+      rgba(255,255,255,.90);
+    box-shadow: var(--shadow2);
   }
   .brand img{
-    height: 34px;
+    height: 42px; /* bigger */
     width:auto;
     display:block;
     opacity:.98;
@@ -151,14 +189,14 @@
   .rail::-webkit-scrollbar,
   .board-inner::-webkit-scrollbar{ width: 10px; height: 10px; }
   .rail::-webkit-scrollbar-track,
-  .board-inner::-webkit-scrollbar-track{ background: rgba(255,255,255,.08); border-radius: 999px; }
+  .board-inner::-webkit-scrollbar-track{ background: rgba(15,39,71,.07); border-radius: 999px; }
   .rail::-webkit-scrollbar-thumb,
   .board-inner::-webkit-scrollbar-thumb{
-    background: linear-gradient(180deg, var(--g4), var(--g5));
+    background: linear-gradient(180deg, rgba(46,125,215,.85), rgba(26,155,103,.85));
     border-radius: 999px;
-    border: 2px solid rgba(6,18,37,.65);
+    border: 2px solid rgba(238,246,255,.95);
   }
-  .rail, .board-inner{ scrollbar-width: thin; scrollbar-color: var(--g4) rgba(255,255,255,.10); }
+  .rail, .board-inner{ scrollbar-width: thin; scrollbar-color: rgba(46,125,215,.85) rgba(15,39,71,.07); }
 
   .city-btn{
     display:flex;
@@ -169,28 +207,40 @@
     text-align:left;
     padding: 10px 10px;
     border-radius: 16px;
-    border: 1px solid rgba(255,255,255,.18);
-    background: rgba(255,255,255,.10);
-    color:#fff;
+    border: 1px solid rgba(15,39,71,.14);
+    background:
+      radial-gradient(140% 160% at 80% 0%, rgba(46,125,215,.07) 0%, transparent 60%),
+      radial-gradient(140% 160% at 10% 10%, rgba(26,155,103,.06) 0%, transparent 60%),
+      #fff;
+    color: var(--ink);
     box-shadow: var(--shadow2);
     cursor:pointer;
     transition: transform .16s ease, border-color .16s ease, background .16s ease, box-shadow .16s ease;
     position:relative;
     overflow:hidden;
   }
+  .city-btn::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background: linear-gradient(90deg, rgba(46,125,215,.10) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity .16s ease;
+    pointer-events:none;
+  }
   .city-btn:hover{
     transform: translateY(-1px);
-    border-color: rgba(16,166,162,.55);
-    background: rgba(16,166,162,.16);
-    box-shadow: 0 16px 32px rgba(0,0,0,.28);
+    border-color: rgba(27,122,134,.35);
+    box-shadow: 0 16px 32px rgba(15, 23, 42, .10);
   }
+  .city-btn:hover::before{ opacity: 1; }
   .city-btn[aria-pressed="true"]{
-    border-color: rgba(96,208,0,.70);
+    border-color: rgba(46,125,215,.45);
     background:
-      radial-gradient(140% 160% at 20% 0%, rgba(96,208,0,.22) 0%, transparent 58%),
-      linear-gradient(180deg, rgba(16,166,162,.22) 0%, rgba(7,11,31,.20) 100%),
-      rgba(255,255,255,.10);
-    box-shadow: 0 18px 36px rgba(0,0,0,.32);
+      radial-gradient(140% 160% at 20% 0%, rgba(99,208,0,.12) 0%, transparent 58%),
+      radial-gradient(140% 160% at 90% 20%, rgba(46,125,215,.12) 0%, transparent 62%),
+      linear-gradient(180deg, rgba(15,39,71,.04) 0%, rgba(255,255,255,.96) 100%);
+    box-shadow: 0 18px 36px rgba(15, 23, 42, .12);
   }
 
   .city-left{ display:flex;align-items:center;gap:10px;min-width:0; }
@@ -202,11 +252,12 @@
     place-items:center;
     font-weight: 1100;
     font-size: 12px;
-    color: #061225;
-    border: 1px solid rgba(255,255,255,.22);
-    box-shadow: 0 10px 22px rgba(0,0,0,.22);
+    color: var(--navy);
+    border: 1px solid rgba(15,39,71,.18);
+    box-shadow: 0 10px 22px rgba(15, 23, 42, .10);
     position: relative;
     flex: 0 0 auto;
+    background: #fff;
   }
   .rank-medal::after{
     content:"";
@@ -218,12 +269,12 @@
     border-left:7px solid transparent;
     border-right:7px solid transparent;
     border-top:10px solid #c73434;
-    filter: drop-shadow(0 6px 10px rgba(0,0,0,.25));
+    filter: drop-shadow(0 6px 10px rgba(15, 23, 42, .18));
   }
-  .rank-1{ background: radial-gradient(120% 140% at 30% 20%, #fff3b0 0%, #e6b800 62%, #b98a00 100%); }
-  .rank-2{ background: radial-gradient(120% 140% at 30% 20%, #ffffff 0%, #cdd5df 64%, #9aa6b4 100%); }
-  .rank-3{ background: radial-gradient(120% 140% at 30% 20%, #ffd7bf 0%, #c07a3a 62%, #8a4b1f 100%); }
-  .rank-rest{ background: radial-gradient(120% 140% at 30% 20%, #f7fbff 0%, #b7c8dd 66%, #7f99b6 100%); color:#061225; }
+  .rank-1{ background: radial-gradient(120% 140% at 30% 20%, #fff6c9 0%, #f1c40f 62%, #c89a00 100%); }
+  .rank-2{ background: radial-gradient(120% 140% at 30% 20%, #ffffff 0%, #d7dee8 64%, #a6b3c3 100%); }
+  .rank-3{ background: radial-gradient(120% 140% at 30% 20%, #ffe2cf 0%, #c9823f 62%, #8a4b1f 100%); color:#fff; }
+  .rank-rest{ background: radial-gradient(120% 140% at 30% 20%, #f7fbff 0%, #c7d3e2 66%, #97abc2 100%); }
 
   .city-name{
     font-size: var(--t-city);
@@ -232,30 +283,32 @@
     white-space:nowrap;
     overflow:hidden;
     text-overflow:ellipsis;
-    max-width: 195px;
+    max-width: 210px;
   }
 
   .city-score{ text-align:right; flex:0 0 auto; min-width: 138px; }
   .city-score .lbl{
     font-size: 10px;
     font-weight: 1100;
-    color: var(--kickerGreen);
-    opacity: 1;
+    color: var(--muted2);
     white-space:nowrap;
+    letter-spacing:.22px;
+    text-transform: uppercase;
   }
   .city-score .num{
     margin-top: 3px;
     font-size: 16px;
     font-weight: 1100;
     font-variant-numeric: tabular-nums;
+    color: var(--navy);
   }
 
   /* RIGHT BOARD */
   .board{
     height:100%;
     border-radius: 22px;
-    background: rgba(255,255,255,.94);
-    border: 1px solid rgba(255,255,255,.18);
+    background: #fff;
+    border: 1px solid rgba(15,39,71,.14);
     box-shadow: var(--shadow2);
     overflow:hidden;
     position:relative;
@@ -264,8 +317,9 @@
     content:"";
     position:absolute; inset:-2px;
     background:
-      radial-gradient(900px 520px at 75% 0%, rgba(16,166,162,.16) 0%, transparent 55%),
-      radial-gradient(900px 520px at 12% 10%, rgba(96,208,0,.10) 0%, transparent 60%);
+      radial-gradient(900px 520px at 82% 0%, rgba(46,125,215,.10) 0%, transparent 55%),
+      radial-gradient(900px 520px at 12% 10%, rgba(26,155,103,.10) 0%, transparent 60%),
+      radial-gradient(900px 520px at 55% 110%, rgba(99,208,0,.08) 0%, transparent 65%);
     pointer-events:none;
   }
 
@@ -281,15 +335,15 @@
     min-height:0;
   }
 
-  /* HERO — big image */
+  /* HERO */
   .hero{
     border-radius: 22px;
-    border: 1px solid var(--border);
+    border: 1px solid rgba(15,39,71,.16);
     overflow:hidden;
     position:relative;
-    height: 260px;
-    background: linear-gradient(135deg, var(--g1), var(--g5));
-    box-shadow: 0 14px 30px rgba(11,39,77,.12);
+    height: 280px;
+    background: linear-gradient(135deg, rgba(46,125,215,.18), rgba(26,155,103,.14));
+    box-shadow: 0 14px 30px rgba(15, 23, 42, .10);
     flex: 0 0 auto;
   }
   .hero-photo{
@@ -299,15 +353,16 @@
     object-position:center;
     display:block;
     transform: scale(1.01);
-    filter: saturate(1.02) contrast(1.02);
+    filter: saturate(1.03) contrast(1.02);
   }
   .hero-photo.is-hidden{ display:none; }
 
   .hero .overlay{
     position:absolute; inset:0;
     background:
-      linear-gradient(90deg, rgba(5,8,20,.84) 0%, rgba(5,8,20,.48) 56%, rgba(5,8,20,.20) 82%, rgba(5,8,20,.12) 100%),
-      radial-gradient(120% 140% at 80% 10%, rgba(255,255,255,.12) 0%, transparent 60%);
+      linear-gradient(90deg, rgba(9,16,28,.70) 0%, rgba(9,16,28,.44) 56%, rgba(9,16,28,.22) 82%, rgba(9,16,28,.12) 100%),
+      radial-gradient(120% 140% at 80% 10%, rgba(46,125,215,.10) 0%, transparent 60%),
+      radial-gradient(120% 140% at 20% 0%, rgba(99,208,0,.08) 0%, transparent 65%);
     pointer-events:none;
   }
   .hero-content{
@@ -326,27 +381,27 @@
     gap: 8px;
     font-size: var(--t-hero-kicker);
     font-weight: 1100;
-    color: var(--kickerGreen);
+    color: rgba(255,255,255,.92);
     letter-spacing:.2px;
     line-height: 1.1;
-    text-shadow: 0 10px 24px rgba(0,0,0,.35);
+    text-shadow: 0 10px 24px rgba(0,0,0,.28);
     white-space:nowrap;
     overflow:hidden;
     text-overflow:ellipsis;
   }
   .kicker-ico{ width: 15px; height: 15px; flex:0 0 auto; display:inline-block; line-height:0; }
-  .kicker-ico svg{ width:100%; height:100%; display:block; stroke: var(--kickerGreen); fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+  .kicker-ico svg{ width:100%; height:100%; display:block; stroke: rgba(255,255,255,.92); fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
 
   .hero-city{
     margin-top: 10px;
-    font-size: clamp(16px, 2.2vw, 24px);
+    font-size: clamp(18px, 2.35vw, 26px);
     font-weight: 1100;
     color: #fff;
     line-height: 1.1;
     white-space:nowrap;
     overflow:hidden;
     text-overflow:ellipsis;
-    text-shadow: 0 10px 24px rgba(0,0,0,.40);
+    text-shadow: 0 10px 24px rgba(0,0,0,.32);
   }
   .hero-value{
     margin-top: 10px;
@@ -355,10 +410,10 @@
     color: #fff;
     line-height: 1;
     font-variant-numeric: tabular-nums;
-    text-shadow: 0 10px 24px rgba(0,0,0,.45);
+    text-shadow: 0 10px 24px rgba(0,0,0,.36);
   }
 
-  /* METRICS — 4 cards only */
+  /* METRICS */
   .metrics{
     flex: 1 1 auto;
     min-height:0;
@@ -368,8 +423,8 @@
   }
   .mrow{
     border-radius: 20px;
-    background: linear-gradient(180deg, #ffffff, #f7fffb);
-    border: 1px solid var(--border);
+    background: #fff;
+    border: 1px solid rgba(15,39,71,.14);
     padding: 11px 14px;
     display:flex;
     align-items:center;
@@ -377,54 +432,72 @@
     gap: 12px;
     height: 100%;
     transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    position: relative;
+    overflow:hidden;
+  }
+  .mrow::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+      linear-gradient(90deg, rgba(46,125,215,.08) 0%, transparent 55%),
+      radial-gradient(120% 140% at 85% 10%, rgba(26,155,103,.08) 0%, transparent 62%);
+    opacity:.55;
+    pointer-events:none;
   }
   .mrow:hover{
     transform: translateY(-1px);
-    border-color: rgba(16,166,162,.55);
-    box-shadow: 0 14px 30px rgba(11,39,77,.12);
+    border-color: rgba(46,125,215,.35);
+    box-shadow: 0 14px 30px rgba(15, 23, 42, .10);
   }
 
-  .mrow-left{ min-width:0; }
+  .mrow-left{ min-width:0; position:relative; z-index:1; }
   .mTitle{ margin:0; font-size: var(--t-card-title); font-weight: 1100; color: var(--ink); line-height:1.1; }
-  .mValue{ margin-top: 6px; font-size: var(--t-card-value); color: var(--ink); font-weight: 1100; font-variant-numeric: tabular-nums; }
+  .mValue{ margin-top: 6px; font-size: var(--t-card-value); color: var(--navy); font-weight: 1100; font-variant-numeric: tabular-nums; }
 
   .mIcon{
     width: 46px; height: 46px;
     border-radius: 16px;
-    border: 1px solid #d9f3e5;
+    border: 1px solid rgba(46,125,215,.18);
     background:
-      radial-gradient(120% 140% at 30% 20%, rgba(16,166,162,.16) 0%, transparent 65%),
-      linear-gradient(180deg, #ffffff, #f0fffa);
+      radial-gradient(120% 140% at 30% 20%, rgba(99,208,0,.14) 0%, transparent 65%),
+      radial-gradient(120% 140% at 80% 0%, rgba(46,125,215,.14) 0%, transparent 62%),
+      linear-gradient(180deg, #ffffff, #f2fbff);
     display:grid;
     place-items:center;
-    box-shadow: 0 12px 24px rgba(11,39,77,.10);
+    box-shadow: 0 12px 24px rgba(15, 23, 42, .08);
     flex: 0 0 auto;
+    position:relative;
+    z-index:1;
   }
   .mIcon svg{
     width:23px;height:23px;
-    stroke: var(--g3);
+    stroke: var(--emerald);
     fill:none;
     stroke-width:2;
     stroke-linecap:round;
     stroke-linejoin:round;
   }
 
+  /* FOOTER */
   .foot{
     padding: 9px 12px;
-    border-top: 1px solid rgba(255,255,255,.14);
-    background: linear-gradient(92deg, var(--g1) 0%, var(--g2) 40%, var(--g3) 70%, var(--g5) 100%);
-    color:#fff;
+    border-top: 1px solid var(--border);
+    background:
+      radial-gradient(140% 220% at 90% 0%, rgba(46,125,215,.14) 0%, transparent 62%),
+      rgba(255,255,255,.92);
+    color: var(--muted);
     display:flex;
     align-items:center;
     justify-content:space-between;
     gap: 10px;
     flex: 0 0 auto;
   }
-  .foot small{ opacity:.92; font-weight: 900; font-size: 12px; }
+  .foot small{ opacity:.95; font-weight: 900; font-size: 12px; color: var(--muted2); }
   .copy-btn{
-    border: 1px solid rgba(255,255,255,.28);
-    background: rgba(255,255,255,.12);
-    color:#fff;
+    border: 1px solid rgba(46,125,215,.22);
+    background: rgba(46,125,215,.10);
+    color: var(--navy);
     font-weight: 1000;
     padding: 8px 10px;
     border-radius: 12px;
@@ -432,7 +505,7 @@
     transition: transform .15s ease, background .15s ease;
     white-space:nowrap;
   }
-  .copy-btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.18); }
+  .copy-btn:hover{ transform: translateY(-1px); background: rgba(46,125,215,.16); }
 
   @media (max-width: 720px){
     .layout{ grid-template-columns: 1fr; }
@@ -466,7 +539,7 @@
           <path d="M18 6h-4V2"/>
         </svg>
       </span>
-      <span id="sb-title">Alien Abduction Odds Index 2025 — Top 10 Provinces</span>
+      <span id="sb-title">Alien Abduction Odds Index 2025 — Top 10 Canadian Provinces</span>
     </h3>
 
     <div class="brand" aria-label="Brand">
@@ -518,22 +591,20 @@
 
 <script>
   // ===== Canada TOP 10 (from your dataset) =====
-  // Note: Human Vulnerability is constant (=23) in the provided rows, so we don't use it as a card.
   const ROWS = [
-    { rank: 1,  state: "British Columbia",         prob: 2.00, ufoPer100k: 3.60, abShare: 16, ufo2019: 205, curiosity: 27100, population: 5698430, ufoTotal: 1264, abduct2019: 13 },
-    { rank: 2,  state: "Alberta",                  prob: 1.98, ufoPer100k: 4.04, abShare: 18, ufo2019: 198, curiosity: 22200, population: 4900000, ufoTotal: 758,  abduct2019: 11 },
-    { rank: 3,  state: "New Brunswick",            prob: 1.55, ufoPer100k: 4.68, abShare: 20, ufo2019: 40,  curiosity: 2400,  population: 854355,  ufoTotal: 222,  abduct2019: 2  },
-    { rank: 4,  state: "Quebec",                   prob: 1.40, ufoPer100k: 1.11, abShare: 25, ufo2019: 101, curiosity: 33100, population: 9110000, ufoTotal: 467,  abduct2019: 4  },
-    { rank: 5,  state: "Nova Scotia",              prob: 1.37, ufoPer100k: 3.90, abShare: 14, ufo2019: 42,  curiosity: 4400,  population: 1076374, ufoTotal: 247,  abduct2019: 3  },
-    { rank: 6,  state: "Saskatchewan",             prob: 1.33, ufoPer100k: 3.77, abShare: 16, ufo2019: 47,  curiosity: 4400,  population: 1246691, ufoTotal: 234,  abduct2019: 3  },
-    { rank: 7,  state: "Ontario",                  prob: 1.22, ufoPer100k: 3.14, abShare: 20, ufo2019: 503, curiosity: 7400,  population: 15996989,ufoTotal: 2675, abduct2019: 25 },
-    { rank: 8,  state: "Manitoba",                 prob: 1.05, ufoPer100k: 2.81, abShare: 14, ufo2019: 42,  curiosity: 5400,  population: 1494301, ufoTotal: 263,  abduct2019: 3  },
-    { rank: 9,  state: "Newfoundland and Labrador",prob: 0.90, ufoPer100k: 2.75, abShare: 0,  ufo2019: 15,  curiosity: 1300,  population: 545880,  ufoTotal: 60,   abduct2019: 0  },
-    { rank:10,  state: "Prince Edward Island",     prob: 0.70, ufoPer100k: 2.23, abShare: 0,  ufo2019: 4,   curiosity: 390,   population: 179709,  ufoTotal: 27,   abduct2019: 0  }
+    { rank: 1,  state: "British Columbia",          prob: 2.00, ufoPer100k: 3.60, abShare: 16, ufoTotal: 1264, ufo2019: 205 },
+    { rank: 2,  state: "Alberta",                   prob: 1.98, ufoPer100k: 4.04, abShare: 18, ufoTotal: 758,  ufo2019: 198 },
+    { rank: 3,  state: "New Brunswick",             prob: 1.55, ufoPer100k: 4.68, abShare: 20, ufoTotal: 222,  ufo2019: 40  },
+    { rank: 4,  state: "Quebec",                    prob: 1.40, ufoPer100k: 1.11, abShare: 25, ufoTotal: 467,  ufo2019: 101 },
+    { rank: 5,  state: "Nova Scotia",               prob: 1.37, ufoPer100k: 3.90, abShare: 14, ufoTotal: 247,  ufo2019: 42  },
+    { rank: 6,  state: "Saskatchewan",              prob: 1.33, ufoPer100k: 3.77, abShare: 16, ufoTotal: 234,  ufo2019: 47  },
+    { rank: 7,  state: "Ontario",                   prob: 1.22, ufoPer100k: 3.14, abShare: 20, ufoTotal: 2675, ufo2019: 503 },
+    { rank: 8,  state: "Manitoba",                  prob: 1.05, ufoPer100k: 2.81, abShare: 14, ufoTotal: 263,  ufo2019: 42  },
+    { rank: 9,  state: "Newfoundland and Labrador", prob: 0.90, ufoPer100k: 2.75, abShare: 0,  ufoTotal: 60,   ufo2019: 15  },
+    { rank:10,  state: "Prince Edward Island",      prob: 0.70, ufoPer100k: 2.23, abShare: 0,  ufoTotal: 27,   ufo2019: 4   }
   ];
 
-  // ===== Background images =====
-  // You only supplied 10 images previously; we reuse the same set, mapped by rank.
+  // Background images (reuse your set in rank order)
   const BG = [
     "https://images.unsplash.com/photo-1656608138197-2aea23cc3564?q=80&w=1554&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "https://images.unsplash.com/photo-1612512836264-5e58fab88bf0?q=80&w=1548&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -548,16 +619,12 @@
   ];
   ROWS.forEach((r, i) => r.bg = BG[i] || BG[0]);
 
-  // 4 “most interesting” datapoints
-  // - Use total reports (big, intuitive)
-  // - Reports since 2019 (recency)
-  // - Reports per 100k (standardized)
-  // - Abduction share (narrative)
+  // 4 metrics (no scrolling micro-text; big + legible)
   const METRICS = [
-    { key:"ufoTotal",  title:"Total UFO reports",            icon: listIcon(),   format: v => Number(v).toLocaleString() },
-    { key:"ufo2019",   title:"UFO reports since 2019",       icon: radarIcon(),  format: v => Number(v).toLocaleString() },
-    { key:"ufoPer100k",title:"UFO reports per 100k",         icon: perCapIcon(), format: v => Number(v).toFixed(2) },
-    { key:"abShare",   title:"Abduction share of reports",   icon: abductIcon(), format: v => `${Number(v).toFixed(0)}%` }
+    { key:"ufoTotal",   title:"Total UFO reports",          icon: listIcon(),   format: v => Number(v).toLocaleString() },
+    { key:"ufo2019",    title:"UFO reports since 2019",     icon: radarIcon(),  format: v => Number(v).toLocaleString() },
+    { key:"ufoPer100k", title:"UFO reports per 100k",       icon: perCapIcon(), format: v => Number(v).toFixed(2) },
+    { key:"abShare",    title:"Abduction share of reports", icon: abductIcon(), format: v => `${Number(v).toFixed(0)}%` }
   ];
 
   const railEl    = document.getElementById("rail");
@@ -642,7 +709,7 @@
   copyBtn.addEventListener("click", async () => {
     const snippet =
 `<iframe
-  title="Alien Abduction Odds Index 2025 — Top 10 Canada Provinces"
+  title="Alien Abduction Odds Index 2025 — Top 10 Canadian Provinces"
   src="YOUR_EMBED_URL_HERE"
   width="100%"
   height="780"
