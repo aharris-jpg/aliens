@@ -1,771 +1,501 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Alien Abduction Odds Index 2025 — Top 10 U.S. States</title>
-
-  <style>
-    html, body { height:100%; }
-    body { margin:0; background:#f1f6f4; overflow:hidden; } /* slightly greener canvas */
-  </style>
-</head>
-
-<body>
-<section class="csb-alien" role="region" aria-labelledby="sb-title">
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Alien Abduction Odds Index 2025 — Top 10 U.S. States</title>
 
 <style>
-  section.csb-alien, section.csb-alien *{
-    box-sizing:border-box;
-    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-  }
-
-  /* ===== LIGHT + MORE “ALIEN” (BUT CREDIBLE) ===== */
-  .csb-alien{
-    --paper:#ffffff;
-    --bg:#f1f6f4;
-    --ink:#0b1220;
-    --muted:#445066;
-    --muted2:#667085;
-
-    /* structure */
-    --border:#d6e2dc;
-    --shadow: 0 18px 52px rgba(15, 23, 42, .10);
-    --shadow2: 0 10px 26px rgba(15, 23, 42, .08);
-
-    /* core brand-ish */
-    --navy:#0f2747;
-    --navy2:#163a66;
-
-    /* more interesting accents */
-    --teal:#1f6f78;
-    --emerald:#1a9b67;         /* richer green */
-    --acid:#63d000;            /* “signal green” for highlights */
-    --limeSoft: rgba(99,208,0,.10);
-    --emeraldSoft: rgba(26,155,103,.10);
-    --tealSoft: rgba(31,111,120,.10);
-
-    /* UI */
-    --gap: 10px;
-    --inner-pad: 12px;
-
-    /* readability */
-    --t-title: clamp(16px, 1.95vw, 22px);
-    --t-city:  clamp(13px, 1.35vw, 15px);
-    --t-hero:  clamp(26px, 3.3vw, 40px);
-    --t-hero-kicker: clamp(12px, 1.25vw, 14px);
-    --t-card-title: clamp(13px, 1.45vw, 16px);
-    --t-card-value: clamp(14px, 1.65vw, 18px);
-  }
-
-  section.csb-alien{
-    height: min(780px, 100vh);
-    max-height: min(780px, 100vh);
-    max-width: 980px;
-    margin: 0 auto;
-    overflow:hidden;
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow);
-    border-radius: 22px;
-
-    /* more “special” but still pro */
-    background:
-      radial-gradient(900px 520px at 85% 0%, rgba(26,155,103,.14) 0%, transparent 58%),
-      radial-gradient(900px 520px at 15% 25%, rgba(99,208,0,.10) 0%, transparent 62%),
-      radial-gradient(900px 520px at 55% 110%, rgba(31,111,120,.10) 0%, transparent 65%),
-      linear-gradient(180deg, rgba(255,255,255,.96) 0%, rgba(241,246,244,.92) 100%),
-      var(--paper);
-    display:flex;
-    flex-direction:column;
-  }
-
-  /* ===== HEADER ===== */
-  .head{
-    padding: 12px 14px 10px;
-    color: var(--ink);
-    border-bottom: 1px solid var(--border);
-    background:
-      radial-gradient(140% 220% at 90% 0%, rgba(99,208,0,.18) 0%, transparent 62%),
-      radial-gradient(160% 240% at 20% 0%, rgba(26,155,103,.14) 0%, transparent 60%),
-      linear-gradient(90deg,
-        rgba(15,39,71,.08) 0%,
-        rgba(31,111,120,.10) 45%,
-        rgba(26,155,103,.12) 75%,
-        rgba(99,208,0,.10) 100%),
-      #fff;
-    flex: 0 0 auto;
-  }
-  .head-top{ display:flex; align-items:center; justify-content:space-between; gap:12px; }
-
-  .title{
-    margin:0;
-    font-size: var(--t-title);
-    font-weight: 1100;
-    letter-spacing:.2px;
-    line-height:1.12;
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
-    display:flex;
-    align-items:center;
-    gap:10px;
-    min-width:0;
-    color: var(--navy);
-  }
-
-  /* left icon becomes a “signal” chip */
-  .title-ufo{
-    width: 26px;
-    height: 26px;
-    flex: 0 0 auto;
-    display:grid;
-    place-items:center;
-    border-radius: 10px;
-    background:
-      radial-gradient(120% 140% at 30% 20%, rgba(99,208,0,.28) 0%, transparent 65%),
-      linear-gradient(180deg, rgba(255,255,255,.95), rgba(241,246,244,.95));
-    border: 1px solid rgba(26,155,103,.25);
-    box-shadow: 0 10px 18px rgba(15, 23, 42, .08);
-  }
-  .title-ufo svg{
-    width:18px;
-    height:18px;
-    display:block;
-    fill:none;
-    stroke: var(--emerald);
-    stroke-width: 2.2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-  }
-
-  #sb-title{
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
-    display:block;
-    min-width:0;
-  }
-
-  /* bigger logo (top right) */
-  .brand{
-    display:flex;align-items:center;gap:10px;
-    padding: 10px 12px;
-    border-radius: 16px;
-    border: 1px solid rgba(15,39,71,.16);
-    background:
-      radial-gradient(140% 160% at 85% 10%, rgba(99,208,0,.14) 0%, transparent 60%),
-      rgba(255,255,255,.90);
-    box-shadow: var(--shadow2);
-  }
-  .brand img{
-    height: 42px; /* bigger */
-    width:auto;
-    display:block;
-    opacity:.98;
-  }
-
-  /* ===== BODY ===== */
-  .wrap{ flex: 1 1 auto; min-height:0; padding: 10px 12px 10px; overflow:hidden; }
-  .layout{
-    height: 100%;
-    display:grid;
-    grid-template-columns: 330px 1fr;
-    gap: var(--gap);
-    align-items:stretch;
-    min-height:0;
-  }
-
-  /* LEFT LIST */
-  .rail{
-    display:flex;
-    flex-direction:column;
-    gap: var(--gap);
-    height:100%;
-    overflow:auto;
-    padding-right: 6px;
-  }
-
-  .rail::-webkit-scrollbar,
-  .board-inner::-webkit-scrollbar{ width: 10px; height: 10px; }
-  .rail::-webkit-scrollbar-track,
-  .board-inner::-webkit-scrollbar-track{ background: rgba(15,39,71,.07); border-radius: 999px; }
-  .rail::-webkit-scrollbar-thumb,
-  .board-inner::-webkit-scrollbar-thumb{
-    background: linear-gradient(180deg, rgba(26,155,103,.85), rgba(99,208,0,.85));
-    border-radius: 999px;
-    border: 2px solid rgba(241,246,244,.95);
-  }
-  .rail, .board-inner{ scrollbar-width: thin; scrollbar-color: rgba(26,155,103,.85) rgba(15,39,71,.07); }
-
-  .city-btn{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap: 10px;
-    width:100%;
-    text-align:left;
-    padding: 10px 10px;
-    border-radius: 16px;
-    border: 1px solid rgba(15,39,71,.14);
-    background:
-      radial-gradient(140% 160% at 80% 0%, rgba(26,155,103,.08) 0%, transparent 60%),
-      #fff;
-    color: var(--ink);
-    box-shadow: var(--shadow2);
-    cursor:pointer;
-    transition: transform .16s ease, border-color .16s ease, background .16s ease, box-shadow .16s ease;
-    position:relative;
-    overflow:hidden;
-  }
-  .city-btn::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background: linear-gradient(90deg, rgba(99,208,0,.12) 0%, transparent 50%);
-    opacity: 0;
-    transition: opacity .16s ease;
-    pointer-events:none;
-  }
-  .city-btn:hover{
-    transform: translateY(-1px);
-    border-color: rgba(26,155,103,.35);
-    box-shadow: 0 16px 32px rgba(15, 23, 42, .10);
-  }
-  .city-btn:hover::before{ opacity: 1; }
-  .city-btn[aria-pressed="true"]{
-    border-color: rgba(26,155,103,.55);
-    background:
-      radial-gradient(140% 160% at 20% 0%, rgba(99,208,0,.16) 0%, transparent 58%),
-      radial-gradient(140% 160% at 90% 20%, rgba(26,155,103,.12) 0%, transparent 62%),
-      linear-gradient(180deg, rgba(15,39,71,.04) 0%, rgba(255,255,255,.96) 100%);
-    box-shadow: 0 18px 36px rgba(15, 23, 42, .12);
-  }
-
-  .city-left{ display:flex;align-items:center;gap:10px;min-width:0; }
-
-  .rank-medal{
-    width: 28px; height: 28px;
-    border-radius: 999px;
-    display:grid;
-    place-items:center;
-    font-weight: 1100;
-    font-size: 12px;
-    color: var(--navy);
-    border: 1px solid rgba(15,39,71,.18);
-    box-shadow: 0 10px 22px rgba(15, 23, 42, .10);
-    position: relative;
-    flex: 0 0 auto;
-    background: #fff;
-  }
-  .rank-medal::after{
-    content:"";
-    position:absolute;
-    bottom:-9px;
-    left:50%;
-    transform:translateX(-50%);
-    width:0; height:0;
-    border-left:7px solid transparent;
-    border-right:7px solid transparent;
-    border-top:10px solid #c73434;
-    filter: drop-shadow(0 6px 10px rgba(15, 23, 42, .18));
-  }
-  .rank-1{ background: radial-gradient(120% 140% at 30% 20%, #fff6c9 0%, #f1c40f 62%, #c89a00 100%); }
-  .rank-2{ background: radial-gradient(120% 140% at 30% 20%, #ffffff 0%, #d7dee8 64%, #a6b3c3 100%); }
-  .rank-3{ background: radial-gradient(120% 140% at 30% 20%, #ffe2cf 0%, #c9823f 62%, #8a4b1f 100%); color:#fff; }
-  .rank-rest{ background: radial-gradient(120% 140% at 30% 20%, #f7fbff 0%, #c7d3e2 66%, #97abc2 100%); }
-
-  .city-name{
-    font-size: var(--t-city);
-    font-weight: 1050;
-    line-height:1.1;
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
-    max-width: 175px;
-  }
-
-  .city-score{ text-align:right; flex:0 0 auto; min-width: 138px; }
-  .city-score .lbl{
-    font-size: 10px;
-    font-weight: 1100;
-    color: var(--muted2);
-    white-space:nowrap;
-    letter-spacing:.22px;
-    text-transform: uppercase;
-  }
-  .city-score .num{
-    margin-top: 3px;
-    font-size: 16px;
-    font-weight: 1100;
-    font-variant-numeric: tabular-nums;
-    color: var(--navy);
-  }
-
-  /* RIGHT BOARD */
-  .board{
-    height:100%;
-    border-radius: 22px;
-    background: #fff;
-    border: 1px solid rgba(15,39,71,.14);
-    box-shadow: var(--shadow2);
-    overflow:hidden;
-    position:relative;
-  }
-  .board::before{
-    content:"";
-    position:absolute; inset:-2px;
-    background:
-      radial-gradient(900px 520px at 82% 0%, rgba(99,208,0,.10) 0%, transparent 55%),
-      radial-gradient(900px 520px at 12% 10%, rgba(26,155,103,.10) 0%, transparent 60%),
-      radial-gradient(900px 520px at 55% 110%, rgba(31,111,120,.08) 0%, transparent 65%);
-    pointer-events:none;
-  }
-
-  .board-inner{
-    position:relative; z-index:1;
-    padding: var(--inner-pad);
-    height:100%;
-    overflow:auto;
-    overscroll-behavior: contain;
-    display:flex;
-    flex-direction:column;
-    gap: var(--gap);
-    min-height:0;
-  }
-
-  /* HERO */
-  .hero{
-    border-radius: 22px;
-    border: 1px solid rgba(15,39,71,.16);
-    overflow:hidden;
-    position:relative;
-    height: 280px;
-    background: linear-gradient(135deg, rgba(15,39,71,.18), rgba(26,155,103,.18));
-    box-shadow: 0 14px 30px rgba(15, 23, 42, .10);
-    flex: 0 0 auto;
-  }
-  .hero-photo{
-    position:absolute; inset:0;
-    width:100%; height:100%;
-    object-fit:cover;
-    object-position:center;
-    display:block;
-    transform: scale(1.01);
-    filter: saturate(1.03) contrast(1.02);
-  }
-  .hero-photo.is-hidden{ display:none; }
-
-  .hero .overlay{
-    position:absolute; inset:0;
-    background:
-      /* “night vision” hint but still pro */
-      linear-gradient(90deg, rgba(9,16,28,.72) 0%, rgba(9,16,28,.44) 56%, rgba(9,16,28,.22) 82%, rgba(9,16,28,.12) 100%),
-      radial-gradient(120% 140% at 80% 10%, rgba(99,208,0,.10) 0%, transparent 60%),
-      radial-gradient(120% 140% at 20% 0%, rgba(26,155,103,.10) 0%, transparent 65%);
-    pointer-events:none;
-  }
-  .hero-content{
-    position:absolute; inset:0;
-    padding: 12px 14px 12px;
-    display:flex;
-    align-items:flex-start;
-    justify-content:flex-start;
-    z-index:2;
-  }
-
-  .hero-left{ min-width:0; }
-  .hero-kicker{
-    display:flex;
-    align-items:center;
-    gap: 8px;
-    font-size: var(--t-hero-kicker);
-    font-weight: 1100;
-    color: rgba(255,255,255,.92);
-    letter-spacing:.2px;
-    line-height: 1.1;
-    text-shadow: 0 10px 24px rgba(0,0,0,.28);
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
-  }
-  .kicker-ico{ width: 15px; height: 15px; flex:0 0 auto; display:inline-block; line-height:0; }
-  .kicker-ico svg{ width:100%; height:100%; display:block; stroke: rgba(255,255,255,.92); fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
-
-  .hero-city{
-    margin-top: 10px;
-    font-size: clamp(18px, 2.35vw, 26px);
-    font-weight: 1100;
-    color: #fff;
-    line-height: 1.1;
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
-    text-shadow: 0 10px 24px rgba(0,0,0,.32);
-  }
-  .hero-value{
-    margin-top: 10px;
-    font-size: var(--t-hero);
-    font-weight: 1250;
-    color: #fff;
-    line-height: 1;
-    font-variant-numeric: tabular-nums;
-    text-shadow: 0 10px 24px rgba(0,0,0,.36);
-  }
-
-  /* METRICS */
-  .metrics{
-    flex: 1 1 auto;
-    min-height:0;
-    display:grid;
-    grid-template-rows: repeat(4, 1fr);
-    gap: var(--gap);
-  }
-  .mrow{
-    border-radius: 20px;
-    background: #fff;
-    border: 1px solid rgba(15,39,71,.14);
-    padding: 11px 14px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap: 12px;
-    height: 100%;
-    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
-    position: relative;
-    overflow:hidden;
-  }
-  .mrow::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:
-      linear-gradient(90deg, rgba(99,208,0,.08) 0%, transparent 55%),
-      radial-gradient(120% 140% at 85% 10%, rgba(26,155,103,.08) 0%, transparent 62%);
-    opacity:.55;
-    pointer-events:none;
-  }
-  .mrow:hover{
-    transform: translateY(-1px);
-    border-color: rgba(26,155,103,.40);
-    box-shadow: 0 14px 30px rgba(15, 23, 42, .10);
-  }
-
-  .mrow-left{ min-width:0; position:relative; z-index:1; }
-  .mTitle{ margin:0; font-size: var(--t-card-title); font-weight: 1100; color: var(--ink); line-height:1.1; }
-  .mValue{ margin-top: 6px; font-size: var(--t-card-value); color: var(--navy); font-weight: 1100; font-variant-numeric: tabular-nums; }
-
-  .mIcon{
-    width: 46px; height: 46px;
-    border-radius: 16px;
-    border: 1px solid rgba(26,155,103,.22);
-    background:
-      radial-gradient(120% 140% at 30% 20%, rgba(99,208,0,.18) 0%, transparent 65%),
-      linear-gradient(180deg, #ffffff, #f4fff8);
-    display:grid;
-    place-items:center;
-    box-shadow: 0 12px 24px rgba(15, 23, 42, .08);
-    flex: 0 0 auto;
-    position:relative;
-    z-index:1;
-  }
-  .mIcon svg{
-    width:23px;height:23px;
-    stroke: var(--emerald);
-    fill:none;
-    stroke-width:2;
-    stroke-linecap:round;
-    stroke-linejoin:round;
-  }
-
-  /* FOOTER */
-  .foot{
-    padding: 9px 12px;
-    border-top: 1px solid var(--border);
-    background:
-      radial-gradient(140% 220% at 90% 0%, rgba(99,208,0,.14) 0%, transparent 62%),
-      rgba(255,255,255,.92);
-    color: var(--muted);
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap: 10px;
-    flex: 0 0 auto;
-  }
-  .foot small{ opacity:.95; font-weight: 900; font-size: 12px; color: var(--muted2); }
-  .copy-btn{
-    border: 1px solid rgba(26,155,103,.28);
-    background: rgba(99,208,0,.10);
-    color: var(--navy);
-    font-weight: 1000;
-    padding: 8px 10px;
-    border-radius: 12px;
-    cursor:pointer;
-    transition: transform .15s ease, background .15s ease;
-    white-space:nowrap;
-  }
-  .copy-btn:hover{ transform: translateY(-1px); background: rgba(99,208,0,.16); }
-
-  @media (max-width: 720px){
-    .layout{ grid-template-columns: 1fr; }
-    .rail{
-      flex-direction:row;
-      overflow:auto;
-      padding: 0 2px 8px;
-      scroll-snap-type: x mandatory;
-      height: auto;
-    }
-    .city-btn{ min-width: 320px; scroll-snap-align: start; }
-    .hero{ height: 300px; }
-    .metrics{ display:flex; flex-direction:column; }
-    .mrow{ height:auto; }
-    .city-name{ max-width: 210px; }
-  }
-
-  @media (prefers-reduced-motion: reduce){
-    .mrow, .city-btn { transition:none !important; }
-  }
+  html, body { height:100%; }
+  body { margin:0; background:#f1f6f4; } /* match your greener page canvas */
 </style>
+</head>
 
-<header class="head">
-  <div class="head-top">
-    <h3 class="title">
-      <span class="title-ufo" aria-hidden="true" title="Alien Abduction Odds Index">
-        <svg viewBox="0 0 24 24">
-          <path d="M12 20a8 8 0 1 0-8-8"/>
-          <path d="M12 20a4 4 0 1 0-4-4"/>
-          <path d="M12 12l6-6"/>
-          <path d="M18 6h-4V2"/>
-        </svg>
-      </span>
-      <span id="sb-title">Alien Abduction Odds Index 2025 — Top 10 U.S. States</span>
-    </h3>
+<body style="margin:0;">
 
-    <div class="brand" aria-label="Brand">
-      <img alt="Canada Sports Betting logo" src="https://i.postimg.cc/6pKbwNNV/CSB-logo-on-black.png">
-    </div>
+<section
+  class="csb-alien-table"
+  role="region"
+  aria-labelledby="csb-alien-title"
+  style="
+    max-width:860px;
+    margin:16px auto;
+    font:14px/1.35 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    color:#0b1220;
+    background:#ffffff;
+    border:1px solid #d6e2dc;
+    border-radius:14px;
+    box-shadow:0 1px 2px rgba(0,0,0,.04), 0 10px 26px rgba(15,23,42,.10);
+    overflow:hidden;
+  "
+>
+  <style>
+    /* ==== Scoped styles =========================================== */
+    section.csb-alien-table, section.csb-alien-table *{
+      box-sizing:border-box;
+      font-family:inherit;
+      color:inherit;
+    }
+    section.csb-alien-table{ color-scheme: light; }
+
+    .csb-alien-table{
+      --paper:#ffffff;
+      --ink:#0b1220;
+      --muted:#445066;
+      --muted2:#667085;
+
+      --navy:#0f2747;
+      --teal:#1f6f78;
+      --emerald:#1a9b67;
+      --acid:#63d000;
+
+      --bg:#f1f6f4;
+      --border:#d6e2dc;
+      --snow:rgba(15,39,71,.04);
+    }
+
+    .csb-alien-table .head{
+      padding:14px 16px;
+      border-bottom:1px solid var(--border);
+      color:#fff;
+      background:
+        radial-gradient(140% 160% at 90% 0%, rgba(255,255,255,.16) 0%, transparent 55%),
+        radial-gradient(140% 160% at 15% 10%, rgba(99,208,0,.22) 0%, transparent 55%),
+        linear-gradient(120deg, var(--navy) 0%, var(--teal) 45%, var(--emerald) 100%);
+      position:relative;
+      overflow:hidden;
+    }
+    .csb-alien-table .head::after{
+      content:"";
+      position:absolute;
+      right:16px; top:12px;
+      width:44px; height:44px;
+      border-radius:14px;
+      background:
+        radial-gradient(120% 120% at 30% 20%, rgba(99,208,0,.35) 0%, transparent 62%),
+        rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.18);
+      box-shadow:0 10px 22px rgba(0,0,0,.18);
+      opacity:.95;
+    }
+    .csb-alien-table .title{
+      margin:0 0 4px;
+      font-size:clamp(16px,2.2vw,20px);
+      line-height:1.2;
+      font-weight:900;
+      letter-spacing:.02em;
+      color:#fff;
+      max-width: 660px;
+    }
+    .csb-alien-table .sub{
+      margin:0;
+      color:rgba(255,255,255,.92);
+      font-size:12px;
+      max-width: 760px;
+    }
+    .csb-alien-table .meta{
+      margin:6px 0 0;
+      color:rgba(255,255,255,.88);
+      font-size:12px;
+      max-width: 760px;
+    }
+    .csb-alien-table .meta strong{ color:#fff; }
+
+    .csb-alien-table .table{
+      padding:10px 12px;
+      max-height:min(72vh,640px);
+      overflow:auto;
+      -webkit-overflow-scrolling:touch;
+      scrollbar-gutter:stable;
+      background:
+        radial-gradient(900px 520px at 85% 0%, rgba(26,155,103,.08) 0%, transparent 58%),
+        radial-gradient(900px 520px at 15% 20%, rgba(99,208,0,.06) 0%, transparent 62%),
+        linear-gradient(180deg, rgba(255,255,255,.96) 0%, rgba(241,246,244,.70) 100%);
+    }
+    .csb-alien-table .table::-webkit-scrollbar{ width:8px; height:8px }
+    .csb-alien-table .table::-webkit-scrollbar-track{ background:rgba(15,39,71,.06); border-radius:999px }
+    .csb-alien-table .table::-webkit-scrollbar-thumb{
+      background:linear-gradient(180deg, var(--emerald), var(--acid));
+      border-radius:999px;
+      border:2px solid rgba(255,255,255,.9);
+    }
+
+    .csb-alien-table .row{
+      display:grid;
+      grid-template-columns:40px minmax(0,1.2fr) minmax(0,1fr);
+      gap:10px;
+      align-items:center;
+      margin:6px 0;
+      border:1px solid var(--border);
+      border-radius:12px;
+      padding:9px 10px;
+      background:#fff;
+      transition:transform .16s ease, box-shadow .16s ease, border-color .16s ease, background-color .16s ease;
+    }
+    .csb-alien-table .row:hover{
+      background:linear-gradient(0deg, rgba(99,208,0,.06), rgba(99,208,0,.06)), #fff;
+      border-color:rgba(26,155,103,.35);
+      box-shadow:0 10px 22px rgba(15,23,42,.12);
+      transform:translateY(-1px);
+    }
+
+    @media (max-width:640px){
+      .csb-alien-table .row{ grid-template-columns:32px minmax(0,1fr); }
+      .csb-alien-table .metric{ grid-column:1 / -1; }
+    }
+
+    .csb-alien-table .rank{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:900;
+      font-variant-numeric:tabular-nums;
+      color:var(--muted2);
+    }
+    .csb-alien-table .rank span{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:26px;height:26px;
+      border-radius:999px;
+      background:rgba(15,39,71,.05);
+      border:1px solid var(--border);
+    }
+    .csb-alien-table .row[data-rank="1"] .rank span{
+      background:radial-gradient(circle at 30% 25%,#fff 0%,#FCE79A 40%,#F4C53C 100%);
+      border-color:#E1B534;
+      color:#5A3800;
+    }
+    .csb-alien-table .row[data-rank="2"] .rank span{
+      background:radial-gradient(circle at 30% 25%,#fff 0%,#E8EEF6 45%,#B9C7D9 100%);
+      border-color:#C7D3E2;
+      color:#2A3B54;
+    }
+    .csb-alien-table .row[data-rank="3"] .rank span{
+      background:radial-gradient(circle at 30% 25%,#fff 0%,#FFD9C2 45%,#C9823F 100%);
+      border-color:#D79A66;
+      color:#3B1F00;
+    }
+
+    .csb-alien-table .state{
+      display:flex;
+      flex-direction:column;
+      gap:3px;
+      min-width:0;
+    }
+    .csb-alien-table .state-main{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      font-weight:850;
+      color:#111827;
+      min-width:0;
+    }
+    .csb-alien-table .state-main span.name{
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .csb-alien-table .state-sub{
+      font-size:11px;
+      color:var(--muted);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .csb-alien-table .metric{
+      position:relative;
+      height:34px;
+      border-radius:999px;
+      background:rgba(15,39,71,.06);
+      overflow:hidden;
+      padding-right:140px; /* room for chips */
+      border:1px solid rgba(15,39,71,.08);
+    }
+    .csb-alien-table .bar{
+      position:absolute;
+      inset:0 auto 0 0;
+      border-radius:999px;
+      background:linear-gradient(90deg, var(--navy), var(--emerald));
+      box-shadow:inset 0 0 0 1px rgba(0,0,0,.03);
+    }
+    .csb-alien-table .metric-inner{
+      position:absolute;
+      inset:0 10px 0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      gap:8px;
+      font-variant-numeric:tabular-nums;
+      font-size:12px;
+    }
+    .csb-alien-table .chip{
+      padding:4px 9px;
+      border-radius:999px;
+      background:#fff;
+      border:1px solid #E5E7EB;
+      white-space:nowrap;
+    }
+    .csb-alien-table .chip.prob{
+      font-weight:850;
+      color:var(--navy);
+      border-color:rgba(26,155,103,.25);
+    }
+    .csb-alien-table .chip.odds{
+      color:var(--muted2);
+      font-size:11px;
+    }
+
+    /* Footer + embed */
+    .csb-alien-table .csb-footer{
+      display:block;
+      text-align:center;
+      padding:8px 0;
+      border-top:1px solid var(--border);
+      background:
+        radial-gradient(160% 180% at 90% 0%, rgba(255,255,255,.14) 0%, transparent 55%),
+        linear-gradient(120deg, var(--navy) 0%, var(--emerald) 55%, var(--teal) 100%);
+      color:#fff;
+      position:relative;
+      overflow:visible;
+    }
+    .csb-alien-table .footer-inner{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:12px;
+      position:relative;
+      padding:0 12px;
+    }
+    .csb-alien-table .embed-btn{
+      position:absolute;
+      left:14px;
+      background:rgba(99,208,0,.92);
+      color:#0b1220;
+      border:1px solid rgba(255,255,255,.25);
+      border-radius:10px;
+      padding:7px 12px;
+      font:13px/1.2 system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+      cursor:pointer;
+      transition:.2s ease;
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
+      box-shadow:0 10px 20px rgba(0,0,0,.16);
+      font-weight:850;
+    }
+    .csb-alien-table .embed-btn::before{ content:"</>"; font-size:12px; font-weight:900; }
+    .csb-alien-table .embed-btn:hover{ transform:translateY(-1px); background:rgba(99,208,0,1); }
+
+    .csb-alien-table .csb-footer img{
+      height:44px;
+      width:auto;
+      display:inline-block;
+      filter:drop-shadow(0 0 4px rgba(0,0,0,.35));
+    }
+
+    .csb-alien-table .embed-wrapper{
+      position:absolute;
+      bottom:calc(100% + 10px);
+      left:50%;
+      transform:translateX(-50%);
+      width:min(600px, calc(100% - 24px));
+      display:none;
+      padding:16px 18px;
+      border:1px solid #D1D5DB;
+      border-radius:12px;
+      background:#fff;
+      color:#111;
+      box-shadow:0 14px 30px rgba(0,0,0,.20);
+      z-index:1000;
+      text-align:left;
+    }
+    .csb-alien-table .embed-wrapper::after{
+      content:"";
+      position:absolute;
+      left:50%;
+      transform:translateX(-50%);
+      bottom:-8px;
+      border:8px solid transparent;
+      border-top-color:#fff;
+      filter:drop-shadow(0 1px 1px rgba(0,0,0,.08));
+    }
+    .csb-alien-table .embed-wrapper h4{
+      margin:0 0 8px;
+      font-size:14px;
+      font-weight:900;
+      color:#111827;
+    }
+    .csb-alien-table .embed-wrapper p{
+      margin:0 0 10px;
+      font-size:12px;
+      color:#4b5563;
+    }
+    .csb-alien-table .embed-wrapper textarea{
+      width:100%;
+      height:130px;
+      font:13px/1.45 ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+      color:#111;
+      background:#F9FAFB;
+      padding:10px 12px;
+      border:1px solid #D1D5DB;
+      border-radius:10px;
+      resize:none;
+    }
+    .csb-alien-table #copy-status{
+      display:none;
+      color:#047857;
+      font-size:13px;
+      margin-top:8px;
+      font-weight:800;
+    }
+
+    @media (max-width:640px){
+      .csb-alien-table .embed-btn{ position:static; font-size:12px; padding:7px 10px; }
+      .csb-alien-table .footer-inner{ justify-content:space-between; }
+      .csb-alien-table .csb-footer img{ height:40px; }
+      .csb-alien-table .embed-wrapper{ width:calc(100% - 24px); }
+    }
+  </style>
+
+  <div class="head">
+    <h3 id="csb-alien-title" class="title">Alien Abduction Odds Index 2025 — Top 10 U.S. States</h3>
+    <p class="sub"><em>Where abduction-style UFO reports are most often recorded, based on 2019–2024 reporting patterns.</em></p>
+    <p class="meta">
+      Shown as <strong>implied probability</strong> (a comparison format — not a forecast) plus “1 in X” odds for readability.
+    </p>
   </div>
-</header>
 
-<div class="wrap">
-  <div class="layout">
-    <aside class="rail" id="rail" aria-label="State selector"></aside>
+  <div class="table" id="table"></div>
 
-    <main class="board" aria-live="polite">
-      <div class="board-inner">
-
-        <section class="hero" aria-label="Main metric">
-          <img id="heroImg" class="hero-photo" alt="" loading="eager" decoding="async" referrerpolicy="no-referrer">
-          <div class="overlay" aria-hidden="true"></div>
-
-          <div class="hero-content">
-            <div class="hero-left">
-              <div class="hero-kicker">
-                <span class="kicker-ico" aria-hidden="true">
-                  <svg viewBox="0 0 24 24">
-                    <path d="M4 12s3.5-7 8-7 8 7 8 7-3.5 7-8 7-8-7-8-7Z"/>
-                    <path d="M9 12h6"/>
-                    <path d="M10 15h4"/>
-                  </svg>
-                </span>
-                <span>Implied probability of an abduction</span>
-              </div>
-              <div class="hero-city" id="heroState">New Hampshire</div>
-              <div class="hero-value" id="heroProb">2.00%</div>
-            </div>
-          </div>
-        </section>
-
-        <section class="metrics" id="metrics" aria-label="Key datapoints"></section>
-
-      </div>
-    </main>
-  </div>
-</div>
-
-<footer class="foot" role="contentinfo">
-  <small>Select a state to view the key datapoints.</small>
-  <button class="copy-btn" id="copyBtn" type="button">Copy embed snippet</button>
-</footer>
-
-<script>
-  // ===== USA TOP 10 (from your dataset) =====
-  const ROWS = [
-    { rank: 1,  state: "New Hampshire", prob: 2.00, ufoPer100k: 24.34, abShare: 13.19, ufo2019: 343, curiosity: 1600 },
-    { rank: 2,  state: "Idaho",         prob: 1.90, ufoPer100k: 23.33, abShare: 21.23, ufo2019: 467, curiosity: 1300 },
-    { rank: 3,  state: "Vermont",       prob: 1.79, ufoPer100k: 23.28, abShare: 21.57, ufo2019: 151, curiosity: 720  },
-    { rank: 4,  state: "Maine",         prob: 1.78, ufoPer100k: 21.57, abShare: 16.83, ufo2019: 303, curiosity: 1300 },
-    { rank: 5,  state: "Oregon",        prob: 1.68, ufoPer100k: 20.32, abShare: 21.70, ufo2019: 868, curiosity: 6600 },
-    { rank: 6,  state: "Washington",    prob: 1.66, ufoPer100k: 19.25, abShare: 20.16, ufo2019: 1532, curiosity: 9900 },
-    { rank: 7,  state: "Montana",       prob: 1.64, ufoPer100k: 19.87, abShare: 20.55, ufo2019: 226, curiosity: 880  },
-    { rank: 8,  state: "Wyoming",       prob: 1.47, ufoPer100k: 17.36, abShare: 25.50, ufo2019: 102, curiosity: 320  },
-    { rank: 9,  state: "Arizona",       prob: 1.44, ufoPer100k: 15.69, abShare: 20.17, ufo2019: 1190, curiosity: 990  },
-    { rank:10,  state: "Connecticut",   prob: 1.43, ufoPer100k: 15.24, abShare: 18.06, ufo2019: 560, curiosity: 3600 }
-  ];
-
-  // ===== Background images (10) — use yours in rank order =====
-  const BG = [
-    "https://images.unsplash.com/photo-1656608138197-2aea23cc3564?q=80&w=1554&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1612512836264-5e58fab88bf0?q=80&w=1548&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1530937027413-adadcf3ed719?q=80&w=2133&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1549313861-33587f3d2956?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1698042802112-cf3b4fd37657?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1675108421933-009b025379dc?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1640876483885-f4383e67daa3?q=80&w=1685&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1671746240438-d6901529d635?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1607335614551-3062bf90f30e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1607337202714-a88f7abbdee7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-  ];
-  ROWS.forEach((r, i) => r.bg = BG[i] || BG[0]);
-
-  const METRICS = [
-    { key:"ufoPer100k", title:"UFO reports per 100k residents", icon: radarIcon(), format: v => Number(v).toFixed(2) },
-    { key:"abShare",    title:"Abduction share of UFO reports",  icon: abductIcon(), format: v => `${Number(v).toFixed(2)}%` },
-    { key:"ufo2019",    title:"UFO reports since 2019",          icon: listIcon(),   format: v => Number(v).toLocaleString() },
-    { key:"curiosity",  title:"Curiosity / Public Interest",     icon: sparkIcon(),  format: v => Number(v).toLocaleString() }
-  ];
-
-  const railEl    = document.getElementById("rail");
-  const heroState = document.getElementById("heroState");
-  const heroProb  = document.getElementById("heroProb");
-  const heroImg   = document.getElementById("heroImg");
-  const metricsEl = document.getElementById("metrics");
-
-  function medalClass(rank){
-    if(rank === 1) return "rank-1";
-    if(rank === 2) return "rank-2";
-    if(rank === 3) return "rank-3";
-    return "rank-rest";
-  }
-
-  function buildRail(){
-    railEl.innerHTML = ROWS.map((r, i) => `
-      <button class="city-btn" type="button" data-idx="${i}" aria-pressed="${i===0 ? "true":"false"}">
-        <span class="city-left">
-          <span class="rank-medal ${medalClass(r.rank)}" aria-label="Rank ${r.rank}">${r.rank}</span>
-          <span style="min-width:0">
-            <div class="city-name">${escapeHtml(r.state)}</div>
-          </span>
-        </span>
-
-        <span class="city-score" aria-label="Implied probability of an abduction">
-          <div class="lbl">Implied probability</div>
-          <div class="num">${Number(r.prob).toFixed(2)}%</div>
-        </span>
+  <div class="csb-footer">
+    <div class="footer-inner">
+      <button id="copy-embed-btn" class="embed-btn" aria-controls="embed-wrapper" aria-expanded="false" type="button">
+        Embed this chart
       </button>
-    `).join("");
-  }
+      <img
+        src="https://i.postimg.cc/cCL7SsB3/canada-sports-betting.png"
+        alt="Canada Sports Betting"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
 
-  function loadHeroImage(url){
-    heroImg.classList.remove("is-hidden");
-    heroImg.onload = () => heroImg.classList.remove("is-hidden");
-    heroImg.onerror = () => {
-      heroImg.classList.add("is-hidden");
-      heroImg.removeAttribute("src");
-    };
-    heroImg.src = url;
-  }
-
-  function render(idx){
-    const d = ROWS[idx];
-    if(!d) return;
-
-    heroState.textContent = d.state;
-    heroProb.textContent  = `${Number(d.prob).toFixed(2)}%`;
-
-    loadHeroImage(d.bg);
-
-    metricsEl.innerHTML = METRICS.map(m => `
-      <div class="mrow" role="group" aria-label="${escapeHtml(m.title)}">
-        <div class="mrow-left">
-          <h4 class="mTitle">${escapeHtml(m.title)}</h4>
-          <div class="mValue">${m.format(d[m.key])}</div>
-        </div>
-        <div class="mIcon" aria-hidden="true" title="${escapeHtml(m.title)}">${m.icon}</div>
-      </div>
-    `).join("");
-  }
-
-  function wireRail(){
-    const btns = Array.from(document.querySelectorAll(".city-btn"));
-    btns.forEach(b => {
-      b.addEventListener("click", () => {
-        btns.forEach(x => x.setAttribute("aria-pressed","false"));
-        b.setAttribute("aria-pressed","true");
-        render(Number(b.dataset.idx));
-      });
-      b.addEventListener("keydown", (e) => {
-        if(e.key === "Enter" || e.key === " "){
-          e.preventDefault();
-          b.click();
-        }
-      });
-    });
-  }
-
-  const copyBtn = document.getElementById("copyBtn");
-  copyBtn.addEventListener("click", async () => {
-    const snippet =
-`<iframe
-  title="Alien Abduction Odds Index 2025 — Top 10 U.S. States"
+    <div id="embed-wrapper" class="embed-wrapper" role="dialog" aria-label="Embed code">
+      <h4>Embed this chart</h4>
+      <p>Copy and paste this iframe into your article. Replace the <strong>src</strong> with your hosted embed URL.</p>
+      <textarea id="embed-code" readonly>&lt;iframe
   src="YOUR_EMBED_URL_HERE"
-  width="100%"
-  height="780"
+  title="Alien Abduction Odds Index 2025 — Top 10 U.S. States"
+  width="100%" height="640"
   scrolling="no"
   style="border:0; overflow:hidden; display:block; width:100%;"
-  loading="lazy"></iframe>`;
-    try{
-      await navigator.clipboard.writeText(snippet);
-      copyBtn.textContent = "Copied ✓";
-      setTimeout(()=> copyBtn.textContent = "Copy embed snippet", 1600);
-    }catch(_){
-      copyBtn.textContent = "Copy failed";
-      setTimeout(()=> copyBtn.textContent = "Copy embed snippet", 1600);
-    }
-  });
+  loading="lazy"&gt;&lt;/iframe&gt;</textarea>
+      <p id="copy-status">Embed code copied!</p>
+    </div>
+  </div>
 
-  function escapeHtml(s){
-    return String(s).replace(/[&<>"']/g, c => ({
-      "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
-    }[c]));
-  }
+  <script>
+    (function(){
+      // ===== USA TOP 10 (your dataset) =====
+      const ROWS = [
+        { rank: 1,  state: "New Hampshire", prob: 2.00 },
+        { rank: 2,  state: "Idaho",         prob: 1.90 },
+        { rank: 3,  state: "Vermont",       prob: 1.79 },
+        { rank: 4,  state: "Maine",         prob: 1.78 },
+        { rank: 5,  state: "Oregon",        prob: 1.68 },
+        { rank: 6,  state: "Washington",    prob: 1.66 },
+        { rank: 7,  state: "Montana",       prob: 1.64 },
+        { rank: 8,  state: "Wyoming",       prob: 1.47 },
+        { rank: 9,  state: "Arizona",       prob: 1.44 },
+        { rank: 10, state: "Connecticut",   prob: 1.43 }
+      ];
 
-  function radarIcon(){
-    return `<svg viewBox="0 0 24 24">
-      <path d="M12 20a8 8 0 1 0-8-8"/>
-      <path d="M12 20a4 4 0 1 0-4-4"/>
-      <path d="M12 12l6-6"/>
-      <path d="M18 6h-4V2"/>
-    </svg>`;
-  }
-  function abductIcon(){
-    return `<svg viewBox="0 0 24 24">
-      <path d="M4 12s3.5-7 8-7 8 7 8 7-3.5 7-8 7-8-7-8-7Z"/>
-      <path d="M9 12h6"/>
-      <path d="M10 15h4"/>
-    </svg>`;
-  }
-  function listIcon(){
-    return `<svg viewBox="0 0 24 24">
-      <path d="M8 6h13"/>
-      <path d="M8 12h13"/>
-      <path d="M8 18h13"/>
-      <path d="M3 6h.01"/>
-      <path d="M3 12h.01"/>
-      <path d="M3 18h.01"/>
-    </svg>`;
-  }
-  function sparkIcon(){
-    return `<svg viewBox="0 0 24 24">
-      <path d="M12 2l1.2 4.4L18 8l-4.8 1.6L12 14l-1.2-4.4L6 8l4.8-1.6L12 2Z"/>
-      <path d="M19 14l.8 3L23 18l-3.2 1-0.8 3-.8-3L15 18l3.2-1 .8-3Z"/>
-    </svg>`;
-  }
+      const maxProb = Math.max.apply(null, ROWS.map(r => r.prob));
 
-  buildRail();
-  wireRail();
-  render(0);
-</script>
+      function oneInX(pct){
+        const p = Number(pct) / 100;
+        if (!p || p <= 0) return "—";
+        return Math.round(1 / p).toLocaleString();
+      }
 
+      const table = document.getElementById("table");
+      table.innerHTML = ROWS.map(r => {
+        const width = Math.max(6, (r.prob / maxProb) * 100); // visible minimum
+        return `
+          <div class="row" data-rank="${r.rank}">
+            <div class="rank"><span>${r.rank}</span></div>
+
+            <div class="state">
+              <div class="state-main">
+                <span class="name">${escapeHtml(r.state)}</span>
+              </div>
+              <div class="state-sub">Implied probability: ${r.prob.toFixed(2)}% • Odds: 1 in ${oneInX(r.prob)}</div>
+            </div>
+
+            <div class="metric" aria-label="Implied probability and odds">
+              <span class="bar" style="width:${width.toFixed(2)}%;"></span>
+              <div class="metric-inner">
+                <span class="chip prob">${r.prob.toFixed(2)}%</span>
+                <span class="chip odds">1 in ${oneInX(r.prob)}</span>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join("");
+
+      // ===== Embed dropdown + copy =====
+      const btn     = document.getElementById('copy-embed-btn');
+      const wrapper = document.getElementById('embed-wrapper');
+      const ta      = document.getElementById('embed-code');
+      const status  = document.getElementById('copy-status');
+
+      btn.addEventListener('click', () => {
+        const isHidden = (wrapper.style.display === '' || wrapper.style.display === 'none');
+        wrapper.style.display = isHidden ? 'block' : 'none';
+        btn.setAttribute('aria-expanded', String(isHidden));
+        btn.textContent = isHidden ? 'Hide embed code' : 'Embed this chart';
+
+        if (isHidden) {
+          ta.focus();
+          ta.select();
+          try {
+            document.execCommand('copy');
+            status.style.display = 'block';
+            setTimeout(() => { status.style.display = 'none'; }, 2300);
+          } catch (e) {}
+        }
+      });
+
+      document.addEventListener('click', (e)=>{
+        const open = wrapper.style.display === 'block';
+        if (!open) return;
+        if (!wrapper.contains(e.target) && !btn.contains(e.target)) {
+          wrapper.style.display = 'none';
+          btn.setAttribute('aria-expanded','false');
+          btn.textContent = 'Embed this chart';
+        }
+      });
+
+      document.addEventListener('keydown', (e)=>{
+        if (e.key === 'Escape' && wrapper.style.display === 'block') {
+          wrapper.style.display = 'none';
+          btn.setAttribute('aria-expanded','false');
+          btn.textContent = 'Embed this chart';
+          btn.focus();
+        }
+      });
+
+      function escapeHtml(s){
+        return String(s).replace(/[&<>"']/g, c => ({
+          "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+        }[c]));
+      }
+    })();
+  </script>
 </section>
+
 </body>
 </html>
+
