@@ -31,8 +31,8 @@
       --m4:#08A6A6;
       --m5:#034C4F;
 
-      /* ✅ FIX: No-data (territories) = cool slate w/ green hint (reads as “land”, not “missing”) */
-      --nodata:#364A45;
+      /* Territories / No-data: lighter, cooler slate-green so Canada reads as “present” */
+      --nodata:#4A5E59;
 
       --card:rgba(255,255,255,0.06);
       --border:rgba(255,255,255,0.12);
@@ -236,14 +236,16 @@
         drop-shadow(0 0 14px rgba(53,231,255,0.10));
     }
 
-    /* ✅ FIX: territories read as “context land”, not “broken void” */
+    /* Territories / no-data: lighter fill + softer border so it reads as “background land” */
     .region.nodata{
       fill: var(--nodata);
-      stroke: rgba(255,255,255,0.18);
-      stroke-width:4.6;
+      stroke: rgba(255,255,255,0.12);
+      stroke-width: 3.6;
     }
     .region.nodata:hover{
-      stroke: rgba(255,255,255,0.30);
+      stroke: rgba(255,255,255,0.20);
+      stroke-width: 3.6;
+      filter: none;
     }
 
     /* Optional outline mesh */
@@ -279,14 +281,14 @@
       box-shadow: inset 0 0 0 1px rgba(0,0,0,0.18);
     }
 
-    /* ✅ FIX: editorial note reads intentional */
+    /* “not ranked” chip */
     .legend-note{
       display:flex;
       align-items:center;
       justify-content:center;
       gap:10px;
       padding:0 14px 14px;
-      color:rgba(255,255,255,0.70);
+      color:rgba(255,255,255,0.72);
       font-size:11px;
       font-weight:850;
       letter-spacing:0.02em;
@@ -630,8 +632,7 @@
     const ramp = ["#E9FFF4","#B8FFD9","#5CFFB0","#15E6C2","#08A6A6","#034C4F"];
     const color = d3.scaleQuantize().domain([0, 100]).range(ramp);
 
-    const NO_DATA_FILL =
-      getComputedStyle(document.documentElement).getPropertyValue("--nodata").trim() || "#364A45";
+    const NO_DATA_FILL = getComputedStyle(document.documentElement).getPropertyValue("--nodata").trim() || "#4A5E59";
 
     const svg = d3.select("#map");
     const tooltip = d3.select("#tt");
@@ -727,7 +728,6 @@
       const features = topojson.feature(topo, topo.objects[objKey]).features;
 
       projection.fitSize([W, H], { type:"FeatureCollection", features });
-
       svg.attr("viewBox", `0 0 ${W} ${H}`);
 
       svg.selectAll("path.region")
